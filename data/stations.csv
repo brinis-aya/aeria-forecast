@@ -1,0 +1,37 @@
+station_code,station_name,zone,area_type,influence,point
+FR05037,Caucriauville,ZAR LE-HAVRE,Urbaine,Fond,le_havre
+FR05040,Honfleur Sce Tech.,ZR NORMANDIE,Urbaine,Fond,le_havre
+FR05056,Quillebeuf Phare,ZAR LE-HAVRE,Rurale près des villes,Industrielle,le_havre
+FR05069,Tancarville Mairie,ZAR LE-HAVRE,Rurale près des villes,Industrielle,le_havre
+FR05070,Harfleur Ecole Coty,ZAR LE-HAVRE,Urbaine,Fond,le_havre
+FR05074,Le Havre Ec. Herriot,ZAR LE-HAVRE,Urbaine,Fond,le_havre
+FR05080,Rogerville Mairie,ZAR LE-HAVRE,Périurbaine,Industrielle,le_havre
+FR05081,La Cerlangue,ZAR LE-HAVRE,Rurale près des villes,Industrielle,le_havre
+FR05082,Touques,ZR NORMANDIE,Périurbaine,Fond,le_havre
+FR05083,Gonfreville l Orcher,ZAR LE-HAVRE,Urbaine,Industrielle,le_havre
+FR05084,NDGravenchon Pasteur,ZAR LE-HAVRE,Urbaine,Industrielle,le_havre
+FR05085,Lillebonne,ZAR LE-HAVRE,Urbaine,Industrielle,le_havre
+FR05087,Maison Parc Brotonne,ZR NORMANDIE,Rurale régionale,Fond,rouen
+FR05089,Le Havre Lafaurie-montant,ZAR LE-HAVRE,Urbaine,Trafic,le_havre
+FR05090,Le Havre ville-haute,ZAR LE-HAVRE,Urbaine,Fond,le_havre
+FR21001,Caen Chemin-Vert,ZAR CAEN,Urbaine,Fond,caen
+FR21019,IFS Caen sud,ZAR CAEN,Urbaine,Fond,caen
+FR21031,Alençon Météo-France,ZR NORMANDIE,Périurbaine,Fond,alencon
+FR21038,Cherbourg Hotel de Ville,ZR NORMANDIE,Urbaine,Fond,cherbourg
+FR21039,Cherbourg PMF,ZR NORMANDIE,Urbaine,Trafic,cherbourg
+FR21040,Saint-Lô Eglise,ZR NORMANDIE,Urbaine,Fond,saint_lo
+FR21041,Ouistreham Baie de l Orne,ZAR CAEN,Périurbaine,Fond,caen
+FR21042,Caen Fleury ,ZAR CAEN,Urbaine,Trafic,caen
+FR21050,La Coulonche MERA,ZR NORMANDIE,Rurale nationale,Fond,alencon
+FR25035,Gd Couronne Mairie,ZAG ROUEN,Urbaine,Industrielle,rouen
+FR25036,Rouen Justice,ZAG ROUEN,Urbaine,Fond,rouen
+FR25039,Evreux Centre,ZR NORMANDIE,Urbaine,Fond,evreux
+FR25040,Mesnil Esnard,ZAG ROUEN,Périurbaine,Fond,rouen
+FR25043,Centre Hospitalier,ZAG ROUEN,Urbaine,Fond,rouen
+FR25048,Petit Quevilly,ZAG ROUEN,Urbaine,Fond,rouen
+FR25049,Base loisirs Poses,ZR NORMANDIE,Rurale près des villes,Fond,rouen
+FR25050,Bures-en-bray,ZR NORMANDIE,Rurale régionale,Fond,dieppe
+FR25051,Dieppe prox-auto,ZR NORMANDIE,Urbaine,Trafic,dieppe
+FR25053,Rouen Proxi Quai de Paris,ZAG ROUEN,Urbaine,Trafic,rouen
+FR25054,Petit-Quevilly Sud 3,ZAG ROUEN,Urbaine,Trafic,rouen
+FR25055,Dieppe Golf,ZR NORMANDIE,Périurbaine,Fond,dieppe

@@ -1,0 +1,69 @@
+{
+  "alert_tradeoff": [
+    {
+      "margin": 0.7,
+      "recall": 0.9732,
+      "precision": 0.3068
+    },
+    {
+      "margin": 0.75,
+      "recall": 0.945,
+      "precision": 0.3419
+    },
+    {
+      "margin": 0.8,
+      "recall": 0.8944,
+      "precision": 0.3879
+    },
+    {
+      "margin": 0.85,
+      "recall": 0.8491,
+      "precision": 0.4849
+    },
+    {
+      "margin": 0.9,
+      "recall": 0.8015,
+      "precision": 0.6249
+    },
+    {
+      "margin": 0.95,
+      "recall": 0.7219,
+      "precision": 0.7161
+    },
+    {
+      "margin": 1.0,
+      "recall": 0.6364,
+      "precision": 0.8091
+    }
+  ],
+  "importance": {
+    "o3": {
+      "w1_u_mean": 0.703,
+      "w1_radiation_sum": 0.531,
+      "w1_rh_mean": 0.462,
+      "mean7_o3": 0.459,
+      "eve_o3": 0.429,
+      "w1_cloud_mean": 0.146,
+      "d_wind": 0.092,
+      "lag0_o3": 0.078,
+      "doy_cos": 0.073,
+      "w1_t_max": 0.071,
+      "d_pressure": 0.071,
+      "lag1_o3": 0.067
+    },
+    "pm25": {
+      "eve_pm25": 1.256,
+      "w1_u_mean": 0.139,
+      "reg0_pm25": 0.057,
+      "d_wind": 0.04,
+      "w1_wind_mean": 0.034,
+      "lag0_pm25": 0.033,
+      "w1_v_mean": 0.032,
+      "w1_pressure_mean": 0.028,
+      "mean7_pm25": 0.027,
+      "w1_rh_mean": 0.022,
+      "lag2_pm25": 0.02,
+      "reg0_o3": 0.02
+    }
+  }
+}

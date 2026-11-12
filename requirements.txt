@@ -1,0 +1,10 @@
+# Pinned: the committed model (models/aeria-forecast.joblib) is a pickle tied to these versions.
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
+joblib==1.6.0
+requests==2.34.2
+psycopg[binary]==3.3.9
+fastapi==0.162.5
+pydantic==2.14.3
+uvicorn==0.54.0
