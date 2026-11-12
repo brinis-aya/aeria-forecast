@@ -11,7 +11,7 @@ from dataclasses import asdict
 from datetime import date
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from pydantic import BaseModel, Field
 
 from aeria_forecast import __version__
@@ -47,6 +47,27 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Aeria · 24 h air-quality forecast", version=__version__, lifespan=lifespan,
               description="Forecast of tomorrow's French ATMO index for the Normandy reference stations.")
+
+
+# Security headers (audit finding F5 of the security module). The API only serves public data, but
+# browsers must not sniff, frame or leak it; the interactive /docs page needs inline scripts from its CDN.
+SECURITY_HEADERS = {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
+    "Cache-Control": "no-store",
+}
+API_CSP = "default-src 'none'; frame-ancestors 'none'"
+
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers.update(SECURITY_HEADERS)
+    if not request.url.path.startswith(("/docs", "/redoc", "/openapi.json")):
+        response.headers["Content-Security-Policy"] = API_CSP
+    return response
 
 
 def forecaster() -> Forecaster:

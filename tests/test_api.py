@@ -72,3 +72,11 @@ def test_replayed_forecast_matches_offline_prediction():
     X, _ = load_dataset()
     offline = bundle["model"].predict_concentrations(X.loc[[("FR05089", __import__("pandas").Timestamp(ISSUE))]])
     assert f.concentrations["no2"] == pytest.approx(round(float(offline["no2"].iloc[0]), 1))
+
+
+def test_security_headers(client):
+    r = client.get("/health")
+    assert r.headers["X-Content-Type-Options"] == "nosniff"
+    assert r.headers["X-Frame-Options"] == "DENY"
+    assert r.headers["Content-Security-Policy"].startswith("default-src 'none'")
+    assert "Content-Security-Policy" not in client.get("/docs").headers  # Swagger UI needs its scripts
