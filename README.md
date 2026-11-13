@@ -66,10 +66,29 @@ Full analysis in French: [`docs/rapport.md`](docs/rapport.md) · raw numbers: [`
 - Tests check that changing anything after D leaves the features of D unchanged, and that no backtest
   model is trained on a date whose target falls in its test month.
 
+## Quick test (no database needed)
+
+The trained model and its dataset are committed, so the API and the tests run on their own.
+Requirements: **Python 3.12** (versions are pinned: the model file is tied to scikit-learn 1.9.1), or Docker.
+
+```bash
+docker build -t aeria-forecast . && docker run -p 8083:8083 aeria-forecast
+# then open http://127.0.0.1:8083/docs  or:
+curl "http://127.0.0.1:8083/forecast/FR05090?issue_date=2026-08-12"
+```
+
+Without Docker:
+
+```bash
+python -m venv .venv && . .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements-dev.txt
+pytest                                              # 26 tests, ~1 min
+uvicorn aeria_forecast.api:app --port 8083          # docs: http://127.0.0.1:8083/docs
+```
+
 ## API
 
 ```bash
-pip install -r requirements.txt
 uvicorn aeria_forecast.api:app --port 8083        # docs: http://127.0.0.1:8083/docs
 ```
 
@@ -98,14 +117,16 @@ training — the backtest above is the honest measure of quality.
 docker build -t aeria-forecast . && docker run -p 8083:8083 aeria-forecast
 ```
 
-## Retrain
+## Retrain (optional)
+
+Only needed to refresh the data: it reads the warehouse of module 2.
 
 ```bash
 pip install -r requirements-dev.txt
 python scripts/build_dataset.py --dw postgresql://aeria:aeria@127.0.0.1:5440/aeria   # refresh data/
 python -m aeria_forecast.train         # backtest (≈ 2 min) + final model -> models/, docs/metrics.json
 python scripts/make_figures.py         # docs/figures/
-pytest                                 # 25 tests
+pytest                                 # 26 tests
 ```
 
 ## Layout
